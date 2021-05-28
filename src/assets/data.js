@@ -28,7 +28,7 @@ export const events = [
 		title: 'Accident avec Adelle',
 		description: '',
 		statusName: 'Open',
-		Témoins: ['Mureil', 'Melina']
+		witness: ['Mureil', 'Melina']
 	},
 	{
 		id: 81,
@@ -38,7 +38,7 @@ export const events = [
 		title: 'Accident avec Amara',
 		description: '',
 		statusName: 'Closed',
-		Témoins: ['Tina', 'Luci']
+		witness: ['Tina', 'Luci']
 	},
 	{
 		id: 38,
@@ -48,7 +48,7 @@ export const events = [
 		title: 'Accident avec Helena',
 		description: '',
 		statusName: 'InProgress',
-		Témoins: ['Jeanna', 'Jerry']
+		witness: ['Jeanna', 'Jerry']
 	},
 	{
 		id: 384,
@@ -58,7 +58,7 @@ export const events = [
 		title: 'Accident avec Harry',
 		description: 'Je me suis cassé le bras',
 		statusName: 'InProgress',
-		Témoins: ['Jeanna', 'Jerry', 'Robert']
+		witness: ['Jeanna', 'Jerry', 'Robert']
 	}
 ];
 
