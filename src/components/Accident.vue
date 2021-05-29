@@ -56,6 +56,7 @@
 				</div>
 			</div>
 		</div>
+		<button class="btn btn-primary" @click="updateAccident(event)">Sauvegarder</button>
 	</div>
 </template>
 
@@ -86,6 +87,9 @@ export default {
 		},
 		deleteWitness(comment) {
 			this.$emit('witnessDelete', comment);
+		},
+		updateAccident(event) {
+			this.$emit('accidentUpdate', event);
 		}
 	}
 };
