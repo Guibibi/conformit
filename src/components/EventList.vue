@@ -1,5 +1,6 @@
 <template>
 	<div class="events">
+		<h4>Accidents</h4>
 		<ul class="events__list">
 			<li
 				class="card"
@@ -36,11 +37,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h4 {
+	margin-bottom: 10px;
+}
+
 .events {
 	border: 1px solid black;
 	border-radius: 5px;
 	padding: 15px;
 	background-color: #e5e5e5;
+	height: 100%;
 	&__list {
 		padding-left: 0px !important;
 		list-style-type: none;

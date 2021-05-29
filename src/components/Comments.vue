@@ -1,22 +1,20 @@
 <template lang="html">
-	<div>
+	<div class="comment">
 		<h4>Commentaires</h4>
-		<div class="comment">
-			<div v-for="comment in comments" :key="comment" class="comment__card">
-				<div class="d-flex">
-					<b-icon-person-circle class="comment__picture" font-scale="2"></b-icon-person-circle>
-					<div class="comment__info">
-						<span class="comment__author">{{ comment.author }}</span>
-						<br />
-						<span class="comment__content">{{ comment.content }}</span>
-					</div>
-				</div>
-				<span class="comment__date">{{ formatDate(comment.creationDate) }}</span>
-				<div class="comment__actions">
-					<b-icon-pencil class="comment__edit"></b-icon-pencil>
+		<div v-for="comment in comments" :key="comment" class="comment__card">
+			<div class="d-flex">
+				<b-icon-person-circle class="comment__picture" font-scale="2"></b-icon-person-circle>
+				<div class="comment__info">
+					<span class="comment__author">{{ comment.author }}</span>
 					<br />
-					<b-icon-trash class="comment__delete" @click="deleteComment(comment)"></b-icon-trash>
+					<span class="comment__content">{{ comment.content }}</span>
 				</div>
+			</div>
+			<span class="comment__date">{{ formatDate(comment.creationDate) }}</span>
+			<div class="comment__actions">
+				<b-icon-pencil class="comment__edit"></b-icon-pencil>
+				<br />
+				<b-icon-trash class="comment__delete" @click="deleteComment(comment)"></b-icon-trash>
 			</div>
 		</div>
 	</div>
@@ -41,10 +39,15 @@
 </script>
 
 <style scoped lang="scss">
+h4 {
+	margin-bottom: 10px;
+}
+
 .comment {
 	background-color: #e5e5e5;
 	border: 1px solid black;
 	padding: 15px;
+	height: 100%;
 
 	&__card {
 		border: 1px solid black;
