@@ -8,7 +8,7 @@
 				<Accident :event="event"></Accident>
 			</div>
 			<div class="comments col-md-4">
-				<Comment :comments="comments"></Comment>
+				<Comment :comments="comments" @commentDelete="deleteComment"></Comment>
 			</div>
 		</div>
 	</div>
@@ -38,6 +38,9 @@ export default {
 		selectedEvent(event) {
 			this.event = event;
 			this.comments = GetEventComments(event.id);
+		},
+		deleteComment(comment) {
+			this.comments = this.comments.filter((i) => i === comment);
 		}
 	},
 	created() {

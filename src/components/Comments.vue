@@ -15,7 +15,7 @@
 				<div class="comment__actions">
 					<b-icon-pencil class="comment__edit"></b-icon-pencil>
 					<br />
-					<b-icon-trash class="comment__delete"></b-icon-trash>
+					<b-icon-trash class="comment__delete" @click="deleteComment(comment)"></b-icon-trash>
 				</div>
 			</div>
 		</div>
@@ -28,23 +28,15 @@
   export default  {
     name: 'comment',
     props: ['comments'],
-    mounted () {
-
-    },
-    data () {
-      return {
-
-      }
-    },
     methods: {
       formatDate(date){
         moment.locale('fr')
         return moment(String(date)).format('DD MMMM YYYY');
+      },
+      deleteComment(comment){
+        this.$emit('commentDelete', comment);
       }
     },
-    computed: {
-
-    }
 }
 </script>
 
