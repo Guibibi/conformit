@@ -52,7 +52,7 @@
 			<div class="witness__container">
 				<div class="witness" v-for="witness in event.witness" :key="witness">
 					<span type="text" class="witness__input">{{ witness }}</span>
-					<span class="witness__delete">X</span>
+					<span class="witness__delete" @click="deleteWitness(witness)">X</span>
 				</div>
 			</div>
 		</div>
@@ -83,6 +83,9 @@ export default {
 		formatDate() {
 			this.eventTime = moment(String(this.event.creationDate)).format('HH:mm');
 			this.eventDate = moment(String(this.event.creationDate)).format('YYYY-MM-DD');
+		},
+		deleteWitness(comment) {
+			this.$emit('witnessDelete', comment);
 		}
 	}
 };

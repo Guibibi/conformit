@@ -5,7 +5,7 @@
 				<Events-list :events="eventsList" @selected="selectedEvent"></Events-list>
 			</div>
 			<div class="accident col-md-4">
-				<Accident :event="event"></Accident>
+				<Accident :event="event" @witnessDelete="deleteWitness"></Accident>
 			</div>
 			<div class="comments col-md-4">
 				<Comment :comments="comments" @commentDelete="deleteComment"></Comment>
@@ -40,7 +40,13 @@ export default {
 			this.comments = GetEventComments(event.id);
 		},
 		deleteComment(comment) {
+			console.log('Send a delete request with the comment id to the backend');
 			this.comments = this.comments.filter((i) => i === comment);
+		},
+		deleteWitness(witness) {
+			console.log('Send a delete request with the witness id to the backend');
+			console.log(witness);
+			this.event.witness = this.event.witness.filter((i) => i !== witness);
 		}
 	},
 	created() {
