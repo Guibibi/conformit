@@ -54,8 +54,6 @@ export default {
 	margin-bottom: 10px;
 	background: white;
 	box-shadow: 2px 3px 7px 0px #5f5f5f;
-	&__title {
-	}
 }
 
 .active {

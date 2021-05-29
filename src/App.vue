@@ -2,12 +2,14 @@
 	<div id="app">
 		<div class="container-fluid row">
 			<div class="events col-md-4">
-				<events-list :events="eventsList" @selected="selectedEvent"></events-list>
+				<Events-list :events="eventsList" @selected="selectedEvent"></Events-list>
 			</div>
 			<div class="accident col-md-4">
-				<accident :event="event"></accident>
+				<Accident :event="event"></Accident>
 			</div>
-			<div class="comments col-md-4"></div>
+			<div class="comments col-md-4">
+				<Comment :comments="comments"></Comment>
+			</div>
 		</div>
 	</div>
 </template>
@@ -15,13 +17,15 @@
 <script>
 import EventsList from './components/EventList.vue';
 import Accident from './components/Accident';
-import { events } from './assets/data';
+import Comment from './components/Comments';
+import { events, GetEventComments } from './assets/data';
 
 export default {
 	name: 'App',
 	components: {
 		EventsList,
-		Accident
+		Accident,
+		Comment
 	},
 	data() {
 		return {
@@ -33,6 +37,7 @@ export default {
 	methods: {
 		selectedEvent(event) {
 			this.event = event;
+			this.comments = GetEventComments(event.id);
 		}
 	},
 	created() {
